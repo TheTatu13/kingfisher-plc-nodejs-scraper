@@ -6,11 +6,12 @@
   "manageCompany": true,
   "defaultLocation": ["Cluj-Napoca"],
   "defaultWorkmode": "on-site",
-  "ownJobUrlPrefix": "https://www.kingfisher.com/jobs/",
+  "ownJobUrlPrefix": "https://careers.kingfisher.com/job/",
   "sources": {
     "sitemap": "",
     "listing": "https://careers.kingfisher.com/job-search",
-    "jobArchive": "https://www.kingfisher.com/jobs/"
+    "api": "https://careers.kingfisher.com/api/KFJobLisitingAPI",
+    "jobArchive": "https://careers.kingfisher.com/job/"
   },
   "selectors": {
     "jobArticle": ["", "[class*='job']", ".vacancy, .position, .listing-item"],

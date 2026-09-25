@@ -1,0 +1,67 @@
+{
+  "validatedAt": "2026-09-25T13:16:36.170Z",
+  "source": "ANAF",
+  "brand": "Kingfisher",
+  "anaf": {
+    "cui": 51987250,
+    "name": "KINGFISHER INFORMATION TECHNOLOGY SERVICES (ROMANIA) S.R.L.",
+    "address": "JUD. CLUJ, MUN. CLUJ-NAPOCA, STR. MIHAI EMINESCU, NR.3, ET.1",
+    "registrationNumber": "J2025043050005",
+    "phone": "0755115733",
+    "fax": "",
+    "postalCode": "",
+    "caenCode": "6210",
+    "iban": "",
+    "registrationState": "INREGISTRAT din data 17.06.2025",
+    "registrationDate": "2025-06-18",
+    "fiscalAuthority": "Administraţia Judeţeană a Finanţelor Publice Cluj",
+    "ownershipForm": "PROPR.PRIVATA-CAPITAL PRIVAT STRAIN",
+    "organizationForm": "PERSOANA JURIDICA",
+    "legalForm": "SOCIETATE COMERCIALĂ CU RĂSPUNDERE LIMITATĂ",
+    "vatRegistered": true,
+    "vatPeriods": [
+      {
+        "start": "2025-06-18",
+        "end": null,
+        "yearStart": "",
+        "message": ""
+      }
+    ],
+    "cashBasisVat": false,
+    "cashBasisVatStart": null,
+    "cashBasisVatEnd": null,
+    "inactive": false,
+    "inactiveSince": null,
+    "reactivatedSince": null,
+    "splitVat": false,
+    "eFacturaRegistered": false,
+    "headquartersAddress": {
+      "street": "Str. Mihai Eminescu",
+      "number": "3",
+      "locality": "Mun. Cluj-Napoca",
+      "county": "CLUJ",
+      "country": "",
+      "postalCode": ""
+    },
+    "fiscalAddress": {
+      "street": "",
+      "number": "",
+      "locality": "",
+      "county": "",
+      "country": "",
+      "postalCode": ""
+    },
+    "administrators": [],
+    "authorizedCaenCodes": [],
+    "onrcStatus": 0,
+    "onrcStatusLabel": "Funcțiune"
+  },
+  "peviitor": null,
+  "summary": {
+    "company": "KINGFISHER INFORMATION TECHNOLOGY SERVICES (ROMANIA) S.R.L.",
+    "cif": "51987250",
+    "active": true,
+    "inactiveSince": null,
+    "address": "JUD. CLUJ, MUN. CLUJ-NAPOCA, STR. MIHAI EMINESCU, NR.3, ET.1"
+  }
+}

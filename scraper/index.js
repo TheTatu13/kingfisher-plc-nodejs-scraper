@@ -266,19 +266,76 @@ function locationFromTitle(title) {
   return hit ? [hit] : scraperConfig.defaultLocation;
 }
 
-async function scrapeCareers() {
-  console.log(`Scraping ${scraperConfig.sources.listing} ...`);
+// Kingfisher's careers site (careers.kingfisher.com) renders job-search
+// client-side from a JSON API (KFJobLisitingAPI) — there is no server-rendered
+// HTML listing or JobPosting JSON-LD to scrape, and no sitemap of job
+// permalinks either. Call the API directly, filtered to country=RO (the only
+// jobs relevant to this CIF, a Cluj-based IT services entity), and paginate
+// through every page it reports.
+//
+// Individual job permalinks follow a fixed, confirmed pattern:
+//   https://careers.kingfisher.com/job/<city-slug>/<team-slug>/<title-slug>/<jobId>
+// (e.g. .../job/cluj/digital-it/agile-coach/2026-137799) — there is no <a href>
+// to scrape, so the URL is built from the API's own fields.
+async function fetchKingfisherApiJobs() {
+  const base = scraperConfig.sources.api;
   const jobs = [];
+  let page = 1;
+  let totalPages = 1;
+
+  do {
+    const url = `${base}?JobTitle=&departmentName=&locationId=&country=RO&teamId=&contractTypeId=&companyId=&sort=Newest&page=${page}`;
+    const res = await fetch(url, { timeout: TIMEOUT, headers: { "User-Agent": userAgent, Accept: "application/json" } });
+    if (!res.ok) throw new Error(`Kingfisher API returned ${res.status}`);
+    const data = await res.json();
+    totalPages = data.totalPages || 1;
+
+    for (const item of data.jobDetails || []) {
+      const citySlug = slugify(item.location || "");
+      const teamSlug = slugify(item.teamName || "");
+      const titleSlug = slugify(item.jobTitle || "");
+      const jobUrl = `${OWN_URL_PREFIX}${citySlug}/${teamSlug}/${titleSlug}/${item.jobId}`;
+      jobs.push({
+        url: jobUrl,
+        title: cleanTitle(item.jobTitle) || item.jobTitle,
+        location: locationFromTitle(item.location || ""),
+        workmode: scraperConfig.defaultWorkmode,
+        source: CAREERS_SOURCE
+      });
+    }
+    page++;
+  } while (page <= totalPages);
+
+  return jobs;
+}
+
+async function scrapeCareers() {
+  console.log(`Scraping ${scraperConfig.sources.api} (country=RO) ...`);
+  const jobs = [];
+
+  let apiJobs = [];
+  try {
+    apiJobs = await fetchKingfisherApiJobs();
+    console.log(`  API: ${apiJobs.length} open positions (RO)`);
+  } catch (err) {
+    console.log(`  API error: ${err.message}`);
+  }
+
+  if (apiJobs.length > 0) {
+    jobs.push(...apiJobs);
+  }
 
   const sitemapEntries = await fetchSitemapJobUrls();
   await sleep(PAGE_DELAY);
 
   let listingItems = [];
+  if (jobs.length === 0) {
   try {
     listingItems = parseListing(await fetchListing());
     console.log(`  Listing: ${listingItems.length} open positions`);
   } catch (err) {
     console.log(`  Listing error: ${err.message}`);
+  }
   }
 
   if (listingItems.length > 0) {

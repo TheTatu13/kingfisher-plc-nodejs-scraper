@@ -108,7 +108,22 @@ async function getCompanyFromPeviitor(companyName) {
   }
 
   const data = await res.json();
-  return data.companies?.[0] || null;
+  // api.peviitor.ro/v1/company/?name= does NOT actually filter server-side —
+  // confirmed live: it returns the same unfiltered first page (e.g. "total":
+  // 1475) regardless of the query string. Blindly taking companies?.[0] (the
+  // template's original behaviour) returns an arbitrary, unrelated company —
+  // observed live returning "TRIOPT ROMANIA S.R.L." for a query of "KINGFISHER
+  // INFORMATION TECHNOLOGY SERVICES (ROMANIA) S.R.L.". Since
+  // validateAndGetCompany trusts this return value as the display name to
+  // write back to peviitor, that bug silently mislabels a company's jobs
+  // under a completely different company's name. Filter client-side for an
+  // exact (case-insensitive) match instead, so an unmatched company
+  // correctly falls back to ANAF's name rather than a random one.
+  const target = companyName.trim().toUpperCase();
+  const match = (data.companies || []).find(
+    (c) => typeof c.company === "string" && c.company.trim().toUpperCase() === target
+  );
+  return match || null;
 }
 
 // ============================================================================
