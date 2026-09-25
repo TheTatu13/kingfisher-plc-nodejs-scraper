@@ -1,0 +1,20 @@
+{
+  "userAgent": "job_seeker_ro_spider",
+  "requestTimeoutMs": 10000,
+  "pageDelayMs": 1000,
+  "staleJobDeletion": false,
+  "manageCompany": true,
+  "defaultLocation": ["Cluj-Napoca"],
+  "defaultWorkmode": "on-site",
+  "ownJobUrlPrefix": "https://www.kingfisher.com/jobs/",
+  "sources": {
+    "sitemap": "",
+    "listing": "https://careers.kingfisher.com/job-search",
+    "jobArchive": "https://www.kingfisher.com/jobs/"
+  },
+  "selectors": {
+    "jobArticle": ["", "[class*='job']", ".vacancy, .position, .listing-item"],
+    "jobTitle": ["", "h1, h2, h3, h4", "[itemprop='title'], [aria-label]", "a"],
+    "jobMeta": ["", "p, .meta, [class*='deadline']"]
+  }
+}

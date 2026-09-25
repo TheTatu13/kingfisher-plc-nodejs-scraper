@@ -1,0 +1,11 @@
+{
+  "id": "51987250",
+  "company": "KINGFISHER INFORMATION TECHNOLOGY SERVICES (ROMANIA) S.R.L.",
+  "brand": "Kingfisher",
+  "status": "activ",
+  "location": ["Cluj-Napoca"],
+  "website": ["https://www.kingfisher.com"],
+  "career": ["https://careers.kingfisher.com/job-search"],
+  "scraperFile": "https://github.com/TheTatu13/kingfisher-plc-nodejs-scraper/actions/workflows/scrape.yml",
+  "ownJobUrlPrefix": "https://www.kingfisher.com/jobs/"
+}
