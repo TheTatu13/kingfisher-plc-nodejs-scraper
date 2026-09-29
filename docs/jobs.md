@@ -10,11 +10,18 @@
 | Location | JUD. CLUJ, MUN. CLUJ-NAPOCA, STR. MIHAI EMINESCU, NR.3, ET.1 |
 | Website | [https://www.kingfisher.com](https://www.kingfisher.com) |
 | Careers | [https://careers.kingfisher.com/job-search](https://careers.kingfisher.com/job-search) |
-| Last Scraped | 2026-09-28 |
+| Last Scraped | 2026-09-29 |
 
 ## Current Job Listings (10)
 
-_Generated: 2026-09-28T13:33:24.629Z_
+_Generated: 2026-09-29T12:35:05.453Z_
+
+### Cloud Engineer
+
+- **URL:** [https://careers.kingfisher.com/job/cluj/digital-it/cloud-engineer/2026-148288](https://careers.kingfisher.com/job/cluj/digital-it/cloud-engineer/2026-148288)
+- **Work Mode:** on-site
+- **Location:** România
+- **Status:** scraped
 
 ### Agile Coach
 
@@ -54,13 +61,6 @@ _Generated: 2026-09-28T13:33:24.629Z_
 ### Software Engineer (Java)
 
 - **URL:** [https://careers.kingfisher.com/job/cluj/digital-it/software-engineer-java/2026-148586](https://careers.kingfisher.com/job/cluj/digital-it/software-engineer-java/2026-148586)
-- **Work Mode:** on-site
-- **Location:** România
-- **Status:** scraped
-
-### Cloud Engineer
-
-- **URL:** [https://careers.kingfisher.com/job/cluj/digital-it/cloud-engineer/2026-148288](https://careers.kingfisher.com/job/cluj/digital-it/cloud-engineer/2026-148288)
 - **Work Mode:** on-site
 - **Location:** România
 - **Status:** scraped
