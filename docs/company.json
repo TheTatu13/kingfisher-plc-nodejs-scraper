@@ -12,6 +12,6 @@
   "career": [
     "https://careers.kingfisher.com/job-search"
   ],
-  "scraperFile": "https://github.com/TheTatu13/kingfisher-plc-nodejs-scraper/actions/workflows/scrape.yml",
+  "scraperFile": "https://github.com/peviitor-scrapers/kingfisher-plc-nodejs-scraper/actions/workflows/scrape.yml",
   "ownJobUrlPrefix": "https://careers.kingfisher.com/job/"
 }

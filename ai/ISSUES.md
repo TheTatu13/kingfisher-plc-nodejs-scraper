@@ -1,6 +1,6 @@
 # Issues
 
-Acest proiect folosește [GitHub Issues](https://github.com/TheTatu13/kingfisher-plc-nodejs-scraper/issues) pentru a urmări munca.
+Acest proiect folosește [GitHub Issues](https://github.com/peviitor-scrapers/kingfisher-plc-nodejs-scraper/issues) pentru a urmări munca.
 
 ## Regulă
 
@@ -19,4 +19,4 @@ Excepții:
 
 ## Issue-uri deschise
 
-Vezi [toate issue-urile](https://github.com/TheTatu13/kingfisher-plc-nodejs-scraper/issues).
+Vezi [toate issue-urile](https://github.com/peviitor-scrapers/kingfisher-plc-nodejs-scraper/issues).
